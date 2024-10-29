@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR" ng-app="noticia">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Notícia</title>
+    <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        header {
+            margin-bottom: 20px;
+        }
+        .card {
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.02);
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+  
+   
+    <header>
+        <div class="navbar navbar-dark shadow-sm" style="background: linear-gradient(90deg, #ff0000, #ff6060);">
+            <div class="container d-flex flex-column align-items-center">
+                <a href="#" class="navbar-brand d-flex align-items-center mb-3">
+                    <strong>Blog em NodeJS - Gustavo</strong>
+                </a>
+                <h1 style="font-size: 2.5rem; font-weight: 700; text-align: center; color: #fff;">Consumindo a API REST do Blog</h1>
+            </div>
+            <a href="index.html" class="btn bg-success m-2">
+                <i class="bi bi-arrow-left "></i> Voltar
+            </a>
+        </div>
+        
+    </header>
+
+
+    
+    
+
+<main role="main">
+  <div class="album py-5 bg-light">
+      <div class="container" ng-controller="RestNot">
+          <div class="row">
+              <div class="col-md-8 mx-auto">
+                  <div class="card mb-4 shadow-sm">
+                      <img ng-src="{{ noticia.thumbImage }}" class="card-img-top" alt="{{ noticia.title }}">
+                      <div class="card-body">
+                          <h2 class="card-title">{{ noticia.title }}</h2>
+                          <p class="card-text">{{ noticia.description }}</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      
+<div class="row">
+  <div class="col-md-8 mx-auto">
+      <h3>Outras Notícias</h3>
+      <div class="row">
+          <div class="col-md-4 mb-4" ng-repeat="outra in outrasPublicacoes">
+              <div class="card mb-4 shadow-sm">
+                  <img ng-src="{{ outra.thumbImage }}" class="card-img-top" alt="{{ outra.title }}">
+                  <div class="card-body">
+                      <h5 class="card-title">{{ outra.title }}</h5>
+                      <p class="card-text">{{ outra.description }}</p>
+                      <a href="noticia.html" class="btn bg-success" role="button" ng-click="index($index)">Ver mais</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+      </div>
+  </div>
+</main>
+
+
+
+
+<script src="https://getbootstrap.com/docs/5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

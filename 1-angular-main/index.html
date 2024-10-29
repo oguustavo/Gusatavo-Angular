@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR" ng-app="blog">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <title>Blog de NodeJS</title>
+    <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/favicon.ico">
+  
+    <style>
+        .jumbotron h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .card {
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar navbar-dark shadow-sm" style="background: linear-gradient(90deg, #ff0000, #ff6060);">
+            <div class="container d-flex flex-column align-items-center">
+                <a href="#" class="navbar-brand d-flex align-items-center mb-3">
+                    <strong>Blog em NodeJS - Gustavo</strong>
+                </a>
+                <h1 style="font-size: 2.5rem; font-weight: 700; text-align: center; color: #fff;">Consumindo a API REST do Blog</h1>
+            </div>
+        </div>
+    </header>
+    
+
+<main role="main">
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row" ng-controller="Rest">
+                <div class="col-md-4 mb-4" ng-repeat="publicacao in publicacoes">
+                    <div class="card mb-4 shadow-sm h-100">
+                        <img ng-src="{{ publicacao.thumbImage }}" class="card-img-top" alt="{{ publicacao.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ publicacao.title }}</h5>
+                            <p class="card-text">{{ publicacao.description }}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="noticia.html" class="btn bg-success" role="button" ng-click="index($index)">Ver mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+<script src="https://getbootstrap.com/docs/5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
